@@ -1,4 +1,5 @@
 __author__ = 'Yann Trudel'
+__date__ = "Summer 2015"
 
 from tkinter import *  # Importing the module tkinter for use in the gui
 from math import sin, floor  # Importing maths, for the equation of the perfect CS
