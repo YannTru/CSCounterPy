@@ -2,7 +2,7 @@ __author__ = 'Yann Trudel'
 __date__ = "Summer 2015"
 
 from tkinter import *  # Importing the module tkinter for use in the gui
-from math import sin, floor  # Importing maths, for the equation of the perfect CS
+from math import sin, floor  # Importing maths, for the equation of Creep Score (CS)
 
 
 class GUI(Tk):  # Graphical User Interface. Used for the creation of the window that will show the CS
@@ -33,7 +33,7 @@ class GUI(Tk):  # Graphical User Interface. Used for the creation of the window 
         self.texttime = Label(self, text=self.timeshow)  # Time spent in game in second use as a label, only graphical
         self.state = False  # Setting up the variable state, state will be use as if the counter is running or not
         self.timeinmin = IntVar()  # Setting up the variable to use after timecount, timeinmin will represent in mm:ss
-        self.cswanted = IntVar()  # Peurcent as 85% for the moment, the variable is set up in cscalculus.
+        self.cswanted = IntVar()  # Percent as 85% for the moment, the variable is set up in cscalculus.
         self.cswanted = 0  # Setting at 0 the beginning. I want to make the 85% adjustable in the future,
         # as for now it will be used hardcoded.
 
@@ -106,7 +106,7 @@ class GUI(Tk):  # Graphical User Interface. Used for the creation of the window 
         :return: Change the value of the perfect CS and the cs wanted. As for now Perfect = 100% and Wanted = 85%
         """
         self.timeinmin = int(self.timecount / 60)  # Putting the timer in minutes, in base 10.
-        time = self.timeinmin  # Changing to time only for a easier use in the math formula.
+        time = self.timeinmin  # Changing to time only for an easier use in the math formula.
         self.csperf = 12.9 * time + ((3.68 * time * sin(12.8 * time) + 12.3 * sin((164 * time) * (164 * time)) + \
                                       22 * sin(16.7 * time - 3.68 * time * sin(12.8 * time)) - 104 * time) / (
                                      3.09 + 4.43 * time))  # Pure magic. Lots of work behind it.
